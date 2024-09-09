@@ -4,12 +4,6 @@
  */
 export const seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex('pets').del()
-  await knex('pets').insert([
-    {
-      auth_id: '1',
-      name: 'Olivia Burgess',
-      todo_points: 100,
-    },
-  ])
+  await knex('todos').del()
+  await knex('users').del()
 }
