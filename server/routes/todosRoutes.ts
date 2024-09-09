@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/:id', async (req, res) => {
   try {
-    const id = Number(req.params.id)
+    const id = req.params.id
     const todos = await db.getAllTodos(id)
     res.json(todos)
   } catch (error) {

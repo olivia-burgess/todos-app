@@ -2,7 +2,7 @@ import db from '../connection'
 
 import { TodosData } from '../../../models/todos'
 
-export function getAllTodos(userId: number): Promise<TodosData[]> {
+export function getAllTodos(userId: string): Promise<TodosData[]> {
   return db('todos')
     .where({ user_id: userId })
     .select(
