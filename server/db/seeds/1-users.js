@@ -3,9 +3,9 @@
  * @returns { Promise<void> }
  */
 export const seed = async function (knex) {
-  await knex('pets').insert([
+  await knex('users').insert([
     {
-      auth_id: '1',
+      auth0_id: '1',
       name: 'Olivia Burgess',
       todo_points: 100,
     },
