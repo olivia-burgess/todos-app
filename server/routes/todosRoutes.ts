@@ -43,4 +43,14 @@ router.patch('/:todoId', async (req, res) => {
   }
 })
 
+router.delete('/:todoId', async (req, res) => {
+  try {
+    const id = Number(req.params.todoId)
+    const todos = await db.deleteTodo(id)
+    res.json(todos)
+  } catch (error) {
+    res.sendStatus(500)
+  }
+})
+
 export default router

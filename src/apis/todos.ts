@@ -23,3 +23,9 @@ export async function updateTodo(data: TodosData) {
   const res = await request.patch(url).send(data)
   return res.body as TodosData[]
 }
+
+export async function deleteTodo(id: number) {
+  const url = `${baseUrl}/${id}`
+  const res = await request.delete(url)
+  return
+}

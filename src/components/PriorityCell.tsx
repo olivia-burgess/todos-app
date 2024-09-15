@@ -18,7 +18,6 @@ export default function PriorityCell({ row }) {
       ...todo,
       priority: newPriority,
     })
-    console.log('updatedTodo:', updatedTodo)
   }
 
   return (

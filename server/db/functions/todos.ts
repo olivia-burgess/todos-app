@@ -39,3 +39,7 @@ export function updateTodo(
     is_completed: isCompleted,
   })
 }
+
+export function deleteTodo(id: number): Promise<1 | 0> {
+  return db('todos').where({ id }).delete()
+}

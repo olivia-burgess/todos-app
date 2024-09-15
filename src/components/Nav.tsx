@@ -39,7 +39,7 @@ export default function Nav() {
                 </li>
               </PopoverTrigger>
               <PopoverContent>
-                <AddTodoForm user={user?.sub} />
+                <AddTodoForm user={user?.sub ?? ''} />
               </PopoverContent>
             </Popover>
             <Link to="/my-todos">
