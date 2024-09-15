@@ -7,17 +7,29 @@ export const columns: ColumnDef<TodosData>[] = [
     header: 'Todo',
   },
   {
+    accessorKey: 'category',
+    header: 'Category',
+  },
+  {
     accessorKey: 'priority',
     header: 'Priority',
   },
   {
     accessorKey: 'dueDate',
-    header: 'Due Date',
+    header: () => <div className="text-right">Due Date</div>,
+    cell: ({ row }) => {
+      const dueDate = row.getValue('dueDate')
+
+      const formattedDate = new Date(dueDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+
+      return <div className="text-right font-medium">{formattedDate}</div>
+    },
   },
-  {
-    accessorKey: 'category',
-    header: 'Category',
-  },
+
   {
     accessorKey: 'completion',
     header: 'Completion',
