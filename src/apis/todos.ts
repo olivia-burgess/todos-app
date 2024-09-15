@@ -1,8 +1,13 @@
 import request from 'superagent'
 
-import { TodosData } from '../../models/todos'
+import { TodosData, Todo } from '../../models/todos'
 
 const baseUrl = '/api/v1/todos'
+
+export async function createTodo(data: Todo) {
+  await request.post(baseUrl).send(data)
+  return
+}
 
 export async function getTodosByUser(auth0Id: string | undefined) {
   if (auth0Id === undefined) {

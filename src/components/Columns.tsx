@@ -2,6 +2,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import { TodosData } from 'models/todos'
 
 import PriorityCell from './PriorityCell'
+import DueDateCell from './DueDateCell'
 
 export const columns: ColumnDef<TodosData>[] = [
   {
@@ -20,19 +21,8 @@ export const columns: ColumnDef<TodosData>[] = [
   {
     accessorKey: 'dueDate',
     header: () => <div className="text-right">Due Date</div>,
-    cell: ({ row }) => {
-      const dueDate = row.getValue('dueDate')
-
-      const formattedDate = new Date(dueDate).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
-
-      return <div className="text-right font-medium">{formattedDate}</div>
-    },
+    cell: DueDateCell,
   },
-
   {
     accessorKey: 'completion',
     header: 'Completion',

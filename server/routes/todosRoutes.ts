@@ -3,6 +3,16 @@ import * as db from '../db/functions/todos'
 
 const router = express.Router()
 
+router.post('/', async (req, res) => {
+  try {
+    const newTodo = req.body
+    const todos = await db.createTodo(newTodo)
+    res.json(todos)
+  } catch (error) {
+    res.sendStatus(500)
+  }
+})
+
 router.get('/:id', async (req, res) => {
   try {
     const id = req.params.id
@@ -18,8 +28,6 @@ router.patch('/:todoId', async (req, res) => {
     const todoId = Number(req.params.todoId)
     const { id, userId, todo, priority, dueDate, category, isCompleted } =
       req.body
-    console.log('todoId:', todoId)
-    console.log('req.body:', req.body)
     const todos = await db.updateTodo(todoId, {
       id,
       userId,
@@ -31,7 +39,6 @@ router.patch('/:todoId', async (req, res) => {
     })
     res.json(todos)
   } catch (error) {
-    console.error('WHOOPS', error)
     res.sendStatus(500)
   }
 })

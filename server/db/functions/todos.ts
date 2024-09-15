@@ -1,6 +1,17 @@
 import db from '../connection'
 
-import { TodosData } from '../../../models/todos'
+import { TodosData, Todo } from '../../../models/todos'
+
+export function createTodo(newtodo: Todo): Promise<1 | 0> {
+  return db('todos').insert({
+    user_id: newtodo.userId,
+    todo: newtodo.todo,
+    priority: newtodo.priority,
+    due_date: newtodo.dueDate,
+    category: newtodo.category,
+    is_completed: newtodo.isCompleted,
+  })
+}
 
 export function getAllTodos(userId: string): Promise<TodosData[]> {
   return db('todos')
