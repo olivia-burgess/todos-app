@@ -18,12 +18,13 @@ export default function ViewTasks() {
   console.log(data)
 
   return (
-    <>
-      <h2>My Todos</h2>
-
-      <div className="container mx-auto py-10">
+    <div className="w-4/5 mx-auto">
+      <div>
+        <h2 className="py-4">My Todos</h2>
+      </div>
+      <div className="py-4">
         <DataTable columns={columns} data={data} />
       </div>
-    </>
+    </div>
   )
 }

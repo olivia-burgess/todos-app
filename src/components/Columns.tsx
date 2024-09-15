@@ -1,7 +1,7 @@
 import { ColumnDef } from '@tanstack/react-table'
-import { Todo } from 'models/todos'
+import { TodosData } from 'models/todos'
 
-export const columns: ColumnDef<Todo>[] = [
+export const columns: ColumnDef<TodosData>[] = [
   {
     accessorKey: 'todo',
     header: 'Todo',
