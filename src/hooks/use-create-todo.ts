@@ -8,7 +8,7 @@ export default function useCreateTodo() {
   return useMutation({
     mutationFn: (data: Todo) => createTodo(data),
     onSuccess: async () => {
-      queryClient.invalidateQueries({ queryKey: ['pet'] })
+      queryClient.invalidateQueries({ queryKey: ['todo'] })
     },
   })
 }

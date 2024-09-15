@@ -36,41 +36,64 @@ export default function AddTodoForm({ user }: Props) {
   }
 
   return (
-    <form>
-      <label htmlFor="todo">todo</label>
+    <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <label
+        htmlFor="todo"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
+        todo
+      </label>
       <input
         type="text"
         id="todo"
         name="todo"
         onChange={handleChange}
         value={formState.todo}
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       ></input>
-      <label htmlFor="priority">priority</label>
+      <label
+        htmlFor="priority"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
+        priority
+      </label>
       <select
         id="priority"
         name="priority"
         onChange={handleChange}
         value={formState.priority}
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       >
         <option value="low">low</option>
         <option value="medium">medium</option>
         <option value="high">high</option>
       </select>
-      <br />
-      <label htmlFor="dueDate">due date</label>
+      <label
+        htmlFor="dueDate"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
+        due date
+      </label>
       <input
         type="date"
         id="dueDate"
         name="dueDate"
         onChange={handleChange}
         value={formState.dueDate}
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       ></input>
-      <label htmlFor="category">category</label>
+      <label
+        htmlFor="category"
+        className="block text-gray-700 text-sm font-bold mb-2"
+      >
+        category
+      </label>
       <select
         id="category"
         name="category"
         onChange={handleChange}
         value={formState.category}
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       >
         <option value="home">home</option>
         <option value="errands">errands</option>
@@ -78,8 +101,9 @@ export default function AddTodoForm({ user }: Props) {
         <option value="personal">personal</option>
         <option value="health">health</option>
       </select>
-      <br />
-      <Button onClick={handleSubmit}>Add Todo</Button>
+      <Button onClick={handleSubmit} className={'mt-4'}>
+        Add Todo
+      </Button>
     </form>
   )
 }
