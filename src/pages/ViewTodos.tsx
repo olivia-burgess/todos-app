@@ -20,9 +20,9 @@ export default function ViewTasks() {
   return (
     <div className="w-4/5 mx-auto">
       <div>
-        <h2 className="py-4">My Todos</h2>
+        <h2 className="pt-4">My Todos</h2>
       </div>
-      <div className="py-4">
+      <div className="py-6">
         <DataTable columns={columns} data={data} />
       </div>
     </div>
