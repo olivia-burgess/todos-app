@@ -1,6 +1,8 @@
 import { useAuth0 } from '@auth0/auth0-react'
 
 import useMyTodos from '../hooks/use-my-todos'
+import { columns } from '../components/Columns'
+import { DataTable } from '@/components/DataTable'
 
 export default function ViewTasks() {
   const { user } = useAuth0()
@@ -19,14 +21,9 @@ export default function ViewTasks() {
     <>
       <h2>My Todos</h2>
 
-      {data.map((item) => (
-        <div key={item.todo}>
-          <p>{item.todo}</p>
-          <p>{item.priority}</p>
-          <p>{item.dueDate}</p>
-          <p>{item.category}</p>
-        </div>
-      ))}
+      <div className="container mx-auto py-10">
+        <DataTable columns={columns} data={data} />
+      </div>
     </>
   )
 }

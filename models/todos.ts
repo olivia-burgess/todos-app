@@ -5,3 +5,7 @@ export interface TodosData {
   category: string
   isCompleted: boolean
 }
+
+export interface Todo extends TodosData {
+  id: number
+}

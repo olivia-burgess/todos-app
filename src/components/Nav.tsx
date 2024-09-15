@@ -1,5 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import { Button } from '@headlessui/react'
+import { Button } from '@/components/ui/button'
+
 import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 
 export default function Nav() {
