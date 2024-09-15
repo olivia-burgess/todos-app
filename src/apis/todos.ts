@@ -26,6 +26,6 @@ export async function updateTodo(data: TodosData) {
 
 export async function deleteTodo(id: number) {
   const url = `${baseUrl}/${id}`
-  const res = await request.delete(url)
+  await request.delete(url)
   return
 }
