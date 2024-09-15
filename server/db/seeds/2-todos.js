@@ -6,7 +6,7 @@ export async function seed(knex) {
   await knex('todos').insert([
     {
       id: 1,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'walk dog',
       priority: 'medium',
       due_date: '2024-06-30T10:00:00Z',
@@ -15,7 +15,7 @@ export async function seed(knex) {
     },
     {
       id: 2,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'buy groceries',
       priority: 'high',
       due_date: '2024-07-01T14:00:00Z',
@@ -24,7 +24,7 @@ export async function seed(knex) {
     },
     {
       id: 3,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'finish work report',
       priority: 'high',
       due_date: '2024-07-02T09:00:00Z',
@@ -33,7 +33,7 @@ export async function seed(knex) {
     },
     {
       id: 4,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'call mom',
       priority: 'low',
       due_date: '2024-06-30T16:00:00Z',
@@ -42,7 +42,7 @@ export async function seed(knex) {
     },
     {
       id: 5,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'schedule dentist appointment',
       priority: 'medium',
       due_date: '2024-07-03T11:00:00Z',
@@ -51,7 +51,7 @@ export async function seed(knex) {
     },
     {
       id: 6,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'clean the kitchen',
       priority: 'medium',
       due_date: '2024-07-01T15:00:00Z',
@@ -60,7 +60,7 @@ export async function seed(knex) {
     },
     {
       id: 7,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'finish book',
       priority: 'low',
       due_date: '2024-07-04T12:00:00Z',
@@ -69,7 +69,7 @@ export async function seed(knex) {
     },
     {
       id: 8,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'update resume',
       priority: 'medium',
       due_date: '2024-07-02T10:00:00Z',
@@ -78,7 +78,7 @@ export async function seed(knex) {
     },
     {
       id: 9,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'plan weekend getaway',
       priority: 'low',
       due_date: '2024-07-05T13:00:00Z',
@@ -87,7 +87,7 @@ export async function seed(knex) {
     },
     {
       id: 10,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'organize closet',
       priority: 'low',
       due_date: '2024-07-07T09:00:00Z',
@@ -96,7 +96,7 @@ export async function seed(knex) {
     },
     {
       id: 11,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'buy birthday gift',
       priority: 'medium',
       due_date: '2024-07-07T15:00:00Z',
@@ -105,7 +105,7 @@ export async function seed(knex) {
     },
     {
       id: 12,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'prepare presentation',
       priority: 'high',
       due_date: '2024-07-01T08:00:00Z',
@@ -114,7 +114,7 @@ export async function seed(knex) {
     },
     {
       id: 13,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'renew car insurance',
       priority: 'medium',
       due_date: '2024-07-04T14:00:00Z',
@@ -123,7 +123,7 @@ export async function seed(knex) {
     },
     {
       id: 14,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'fix leaking faucet',
       priority: 'high',
       due_date: '2024-07-04T09:00:00Z',
@@ -132,7 +132,7 @@ export async function seed(knex) {
     },
     {
       id: 15,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'check bank statements',
       priority: 'medium',
       due_date: '2024-07-02T11:00:00Z',
@@ -141,7 +141,7 @@ export async function seed(knex) {
     },
     {
       id: 16,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'book vacation flights',
       priority: 'high',
       due_date: '2024-07-06T10:00:00Z',
@@ -150,7 +150,7 @@ export async function seed(knex) {
     },
     {
       id: 17,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'write thank you notes',
       priority: 'low',
       due_date: '2024-07-04T13:00:00Z',
@@ -159,7 +159,7 @@ export async function seed(knex) {
     },
     {
       id: 18,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'grocery shopping for party',
       priority: 'high',
       due_date: '2024-07-03T17:00:00Z',
@@ -168,7 +168,7 @@ export async function seed(knex) {
     },
     {
       id: 19,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'plant garden',
       priority: 'low',
       due_date: '2024-07-06T12:00:00Z',
@@ -177,7 +177,7 @@ export async function seed(knex) {
     },
     {
       id: 20,
-      user_id: 'auth0|66dd77eca3def1e7c9c33584',
+      user_id: 'google-oauth2|105702501450746358589',
       todo: 'schedule car maintenance',
       priority: 'medium',
       due_date: '2024-07-07T10:00:00Z',

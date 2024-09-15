@@ -6,25 +6,25 @@ export default function ViewTasks() {
   const { user } = useAuth0()
   const { data, isPending, error } = useMyTodos(user?.sub)
 
-  if (isPending || !data) return <p className="text-white">Loading...</p>
+  if (isPending || !data) return <p>Loading...</p>
 
   if (error) {
     console.error(error)
-    return <p className="text-white">There was an error: {error.message}</p>
+    return <p>There was an error: {error.message}</p>
   }
 
   console.log(data)
 
   return (
     <>
-      <h2 className="text-white">My Todos</h2>
+      <h2>My Todos</h2>
 
       {data.map((item) => (
         <div key={item.todo}>
-          <p className="text-white">{item.todo}</p>
-          <p className="text-white">{item.priority}</p>
-          <p className="text-white">{item.dueDate}</p>
-          <p className="text-white">{item.category}</p>
+          <p>{item.todo}</p>
+          <p>{item.priority}</p>
+          <p>{item.dueDate}</p>
+          <p>{item.category}</p>
         </div>
       ))}
     </>
