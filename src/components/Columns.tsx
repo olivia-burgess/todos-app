@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import useUpdateTodo from '@/hooks/use-update-todo'
 
 export const columns: ColumnDef<TodosData>[] = [
   {
@@ -23,10 +24,20 @@ export const columns: ColumnDef<TodosData>[] = [
     accessorKey: 'priority',
     header: 'Priority',
     cell: ({ row }) => {
-      const priority = row.getValue('priority')
+      const todo = row.original
+      const updateTodo = useUpdateTodo()
+
+      const priorityClickHandler = (newPriority: string) => {
+        const updatedTodo = updateTodo.mutate({
+          ...todo,
+          priority: newPriority,
+        })
+        console.log('updatedTodo:', updatedTodo)
+      }
+
       return (
         <div className="flex justify-between items-center">
-          <div>{priority}</div>
+          <div>{todo.priority}</div>
           <div>
             <DropdownMenu>
               <DropdownMenuTrigger>
@@ -36,7 +47,9 @@ export const columns: ColumnDef<TodosData>[] = [
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>low</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => priorityClickHandler('low')}>
+                  low
+                </DropdownMenuItem>
                 <DropdownMenuItem>medium</DropdownMenuItem>
                 <DropdownMenuItem>high</DropdownMenuItem>
               </DropdownMenuContent>
