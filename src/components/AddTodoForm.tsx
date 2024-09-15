@@ -12,9 +12,9 @@ export default function AddTodoForm({ user }: Props) {
   const initialFormState = {
     userId: user,
     todo: '',
-    priority: '',
+    priority: 'low',
     dueDate: '',
-    category: '',
+    category: 'home',
     isCompleted: false,
   }
 
