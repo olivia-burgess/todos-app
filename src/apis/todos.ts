@@ -5,6 +5,7 @@ import { TodosData, Todo } from '../../models/todos'
 const baseUrl = '/api/v1/todos'
 
 export async function createTodo(data: Todo) {
+  console.log(data)
   await request.post(baseUrl).send(data)
   return
 }
