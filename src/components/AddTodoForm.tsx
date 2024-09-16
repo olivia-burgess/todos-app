@@ -1,13 +1,16 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import useCreateTodo from '@/hooks/use-create-todo'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {
   user: string
+  handleClose: VoidFunction
 }
 
-export default function AddTodoForm({ user }: Props) {
+export default function AddTodoForm({ user, handleClose }: Props) {
   const createNewTodo = useCreateTodo()
+  const navigate = useNavigate()
 
   const initialFormState = {
     userId: user,
@@ -33,6 +36,8 @@ export default function AddTodoForm({ user }: Props) {
   const handleSubmit = async (evt: FormEvent) => {
     evt.preventDefault()
     await createNewTodo.mutate({ ...formState })
+    navigate('/my-todos')
+    handleClose()
   }
 
   return (
