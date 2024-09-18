@@ -3,6 +3,7 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
+  await knex('todos').del()
   await knex('todos').insert([
     {
       id: 1,
