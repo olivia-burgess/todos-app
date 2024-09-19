@@ -5,21 +5,15 @@ import { TodosData } from 'models/todos'
 
 interface Props {
   todo: TodosData
-  date: string | undefined
-  setDate: (date: string | undefined) => void
+  date: Date | undefined
+  setDate: (date: Date | undefined) => void
 }
 
 export default function DueDatePopover({ todo, date, setDate }: Props) {
   const updateTodo = useUpdateTodo()
 
   const handleDateChange = (newDate: Date | undefined) => {
-    setDate(
-      newDate?.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      }),
-    )
+    setDate(newDate)
     updateTodo.mutate({
       ...todo,
       dueDate: newDate?.toISOString() ?? null,
@@ -47,7 +41,7 @@ export default function DueDatePopover({ todo, date, setDate }: Props) {
       <PopoverContent className="w-auto p-0">
         <Calendar
           mode="single"
-          selected={new Date(`${date}Z`)}
+          selected={date}
           onSelect={handleDateChange}
           initialFocus
         />
