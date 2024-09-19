@@ -5,8 +5,6 @@ import PriorityCell from './PriorityCell'
 import DueDateCell from './DueDateCell'
 import CategoryCell from './CategoryCell'
 import DeleteCell from './DeleteCell'
-import { Button } from './ui/button'
-import useDeleteTodo from '@/hooks/use-delete-todo'
 
 export const columns: ColumnDef<TodosData>[] = [
   {
@@ -25,7 +23,7 @@ export const columns: ColumnDef<TodosData>[] = [
   },
   {
     accessorKey: 'dueDate',
-    header: () => <div className="text-right">Due Date</div>,
+    header: 'Due Date',
     cell: DueDateCell,
   },
   {

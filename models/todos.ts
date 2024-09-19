@@ -2,7 +2,7 @@ export interface Todo {
   userId: string
   todo: string
   priority: string
-  dueDate: string
+  dueDate: string | null
   category: string
   isCompleted: boolean
 }
