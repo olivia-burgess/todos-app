@@ -1,6 +1,13 @@
 import useDeleteTodo from '@/hooks/use-delete-todo'
+import { TodosData } from 'models/todos'
 
-export default function DeleteCell({ row }) {
+interface Props {
+  row: {
+    original: TodosData
+  }
+}
+
+export default function DeleteCell({ row }: Props) {
   const id = row.original.id
   const deleteTodo = useDeleteTodo()
 

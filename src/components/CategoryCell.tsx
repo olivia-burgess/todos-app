@@ -8,8 +8,15 @@ import { MoreHorizontal } from 'lucide-react'
 import { Button } from './ui/button'
 
 import useUpdateTodo from '@/hooks/use-update-todo'
+import { TodosData } from 'models/todos'
 
-export default function CategoryCell({ row }) {
+interface Props {
+  row: {
+    original: TodosData
+  }
+}
+
+export default function CategoryCell({ row }: Props) {
   const todo = row.original
   const updateTodo = useUpdateTodo()
 

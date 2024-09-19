@@ -1,7 +1,14 @@
+import { TodosData } from 'models/todos'
 import DueDatePopover from './DueDatePopover'
 import { useState } from 'react'
 
-export default function DueDateCell({ row }) {
+interface Props {
+  row: {
+    original: TodosData
+  }
+}
+
+export default function DueDateCell({ row }: Props) {
   const todo = row.original
   const [date, setDate] = useState<Date | undefined>(
     todo.dueDate ? new Date(todo.dueDate) : undefined,

@@ -8,13 +8,20 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import useUpdateTodo from '@/hooks/use-update-todo'
+import { TodosData } from 'models/todos'
 
-export default function PriorityCell({ row }) {
+interface Props {
+  row: {
+    original: TodosData
+  }
+}
+
+export default function PriorityCell({ row }: Props) {
   const todo = row.original
   const updateTodo = useUpdateTodo()
 
   const priorityClickHandler = (newPriority: string) => {
-    const updatedTodo = updateTodo.mutate({
+    updateTodo.mutate({
       ...todo,
       priority: newPriority,
     })
