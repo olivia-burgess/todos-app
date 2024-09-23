@@ -11,11 +11,12 @@ interface Props {
 
 export default function CompleteCell({ row }: Props) {
   const todo = row.original
+  const completed = Boolean(todo.isCompleted)
   const updateTodo = useUpdateTodo()
 
   const completeClickHandler = (isCompleted: boolean) => {
     updateTodo.mutate({ ...todo, isCompleted: isCompleted })
   }
 
-  return <Checkbox onCheckedChange={completeClickHandler} />
+  return <Checkbox checked={completed} onCheckedChange={completeClickHandler} />
 }
