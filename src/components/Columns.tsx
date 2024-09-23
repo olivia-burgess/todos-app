@@ -34,7 +34,7 @@ export const columns: ColumnDef<TodosData>[] = [
   },
   {
     accessorKey: 'delete',
-    header: 'Delete',
+    header: undefined,
     cell: DeleteCell,
   },
 ]
