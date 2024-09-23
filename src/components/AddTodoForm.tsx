@@ -35,7 +35,12 @@ export default function AddTodoForm({ user, handleClose }: Props) {
 
   const handleSubmit = async (evt: FormEvent) => {
     evt.preventDefault()
-    await createNewTodo.mutate({ ...formState })
+    await createNewTodo.mutate({
+      ...formState,
+      dueDate: formState.dueDate
+        ? new Date(formState.dueDate).toISOString()
+        : '',
+    })
     navigate('/my-todos')
     handleClose()
   }
