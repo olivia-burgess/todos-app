@@ -10,7 +10,7 @@ import CompleteCell from './CompleteCell'
 export const columns: ColumnDef<TodosData>[] = [
   {
     accessorKey: 'completion',
-    header: 'Mark Complete',
+    header: undefined,
     cell: CompleteCell,
   },
   {
