@@ -5,8 +5,14 @@ import PriorityCell from './PriorityCell'
 import DueDateCell from './DueDateCell'
 import CategoryCell from './CategoryCell'
 import DeleteCell from './DeleteCell'
+import CompleteCell from './CompleteCell'
 
 export const columns: ColumnDef<TodosData>[] = [
+  {
+    accessorKey: 'completion',
+    header: 'Mark Complete',
+    cell: CompleteCell,
+  },
   {
     accessorKey: 'todo',
     header: 'Todo',
@@ -25,10 +31,6 @@ export const columns: ColumnDef<TodosData>[] = [
     accessorKey: 'dueDate',
     header: 'Due Date',
     cell: DueDateCell,
-  },
-  {
-    accessorKey: 'completion',
-    header: 'Completion',
   },
   {
     accessorKey: 'delete',
