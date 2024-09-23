@@ -39,7 +39,7 @@ export default function AddTodoForm({ user, handleClose }: Props) {
       ...formState,
       dueDate: formState.dueDate
         ? new Date(formState.dueDate).toISOString()
-        : '',
+        : null,
     })
     navigate('/my-todos')
     handleClose()
