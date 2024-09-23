@@ -275,5 +275,14 @@ export async function seed(knex) {
       category: 'work',
       is_completed: false,
     },
+    {
+      id: 31,
+      user_id: 'auth0|66cbcf74af1d1f38db1af0c5',
+      todo: 'make checkbox optimistic',
+      priority: 'medium',
+      due_date: '2024-07-02T10:00:00Z',
+      category: 'work',
+      is_completed: false,
+    },
   ])
 }
