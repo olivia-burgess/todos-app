@@ -15,8 +15,6 @@ export default function ViewTasks() {
     return <p>There was an error: {error.message}</p>
   }
 
-  console.log(data)
-
   return (
     <div className="w-4/5 mx-auto">
       <div>
