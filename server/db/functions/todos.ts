@@ -25,6 +25,7 @@ export function getAllTodos(userId: string): Promise<TodosData[]> {
       'category',
       'is_completed as isCompleted',
     )
+    .orderBy('due_date', 'asc')
 }
 
 export function updateTodo(
