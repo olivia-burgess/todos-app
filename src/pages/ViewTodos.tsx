@@ -4,7 +4,7 @@ import useMyTodos from '../hooks/use-my-todos'
 import { columns } from '../components/Columns'
 import { DataTable } from '@/components/DataTable'
 
-export default function ViewTasks() {
+export default function ViewTodos() {
   const { user } = useAuth0()
   const { data, isPending, error } = useMyTodos(user?.sub)
 
