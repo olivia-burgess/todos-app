@@ -1,8 +1,9 @@
 interface Props {
   columnName: string
+  onClick: VoidFunction
 }
 
-export default function SortIcon({ columnName }: Props) {
+export default function SortIcon({ columnName, onClick }: Props) {
   return (
     <div className="flex justify-between items-center">
       <div>{columnName}</div>
@@ -13,6 +14,7 @@ export default function SortIcon({ columnName }: Props) {
         strokeWidth={1.5}
         stroke="currentColor"
         className="size-4 hover:cursor-pointer"
+        onClick={onClick}
       >
         <path
           strokeLinecap="round"

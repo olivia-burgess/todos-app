@@ -20,17 +20,32 @@ export const columns: ColumnDef<TodosData>[] = [
   },
   {
     accessorKey: 'category',
-    header: () => <SortIcon columnName={'Category'} />,
+    header: ({ column }) => (
+      <SortIcon
+        columnName={'Category'}
+        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+      />
+    ),
     cell: CategoryCell,
   },
   {
     accessorKey: 'priority',
-    header: () => <SortIcon columnName={'Priority'} />,
+    header: ({ column }) => (
+      <SortIcon
+        columnName={'Priority'}
+        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+      />
+    ),
     cell: PriorityCell,
   },
   {
     accessorKey: 'dueDate',
-    header: () => <SortIcon columnName={'Due Date'} />,
+    header: ({ column }) => (
+      <SortIcon
+        columnName={'Due Date'}
+        onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+      />
+    ),
     cell: DueDateCell,
   },
   {
