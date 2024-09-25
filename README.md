@@ -102,3 +102,14 @@ This challenge can be used for the following trello assessments:
 
 ---
 [Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=my-fullstack-collection)
+
+
+
+## App ideas
+- filtering and sorting by category, due date and priority
+- seperate completed and noncompleted
+- conditional if date is today display today, tomorrow display tomorrow, if overdue display overdue OR maybe just make it the date and have it red color?
+- add local storage so unsigned in users can use the app make a popup that they should create account if they want it safely stored
+- add user profile so they user can manage their categories and priorities e.g. add new priority 'critical'
+- add dark mode
+- give barrel exports a go
