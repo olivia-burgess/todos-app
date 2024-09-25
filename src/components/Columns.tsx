@@ -6,6 +6,7 @@ import DueDateCell from './DueDateCell'
 import CategoryCell from './CategoryCell'
 import DeleteCell from './DeleteCell'
 import CompleteCell from './CompleteCell'
+import SortIcon from './SortIcon'
 
 export const columns: ColumnDef<TodosData>[] = [
   {
@@ -19,17 +20,17 @@ export const columns: ColumnDef<TodosData>[] = [
   },
   {
     accessorKey: 'category',
-    header: 'Category',
+    header: () => <SortIcon columnName={'Category'} />,
     cell: CategoryCell,
   },
   {
     accessorKey: 'priority',
-    header: 'Priority',
+    header: () => <SortIcon columnName={'Priority'} />,
     cell: PriorityCell,
   },
   {
     accessorKey: 'dueDate',
-    header: 'Due Date',
+    header: () => <SortIcon columnName={'Due Date'} />,
     cell: DueDateCell,
   },
   {
