@@ -2,6 +2,7 @@ import { Popover, PopoverTrigger, PopoverContent } from './ui/popover'
 import { Calendar } from '@/components/ui/calendar'
 import useUpdateTodo from '@/hooks/use-update-todo'
 import { TodosData } from 'models/todos'
+import { useState } from 'react'
 
 interface Props {
   todo: TodosData
@@ -11,6 +12,7 @@ interface Props {
 
 export default function DueDatePopover({ todo, date, setDate }: Props) {
   const updateTodo = useUpdateTodo()
+  const [open, setOpen] = useState(false)
 
   const handleDateChange = (newDate: Date | undefined) => {
     setDate(newDate)
@@ -18,10 +20,11 @@ export default function DueDatePopover({ todo, date, setDate }: Props) {
       ...todo,
       dueDate: newDate?.toISOString() ?? null,
     })
+    setOpen(false)
   }
 
   return (
-    <Popover>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <svg
           xmlns="http://www.w3.org/2000/svg"
